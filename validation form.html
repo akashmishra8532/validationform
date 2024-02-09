@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>
+        Form validation using HTML
+        and JavaScript
+    </title>
+    <style>
+        div {
+            box-sizing: border-box;
+            width: 100%;
+            border: 100px solid black;
+            float: left;
+            align-content: center;
+            align-items: center;
+        }
+ 
+        form {
+            margin: 0 auto;
+            width: 600px;
+        }
+    
+        body {
+        font-family: 'Arial', sans-serif;
+        background-image: url('data:image/jpeg;base64,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'); /* Add the path to your background image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    form {
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color transparency */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    select {
+        appearance: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        background-color: #45a049;
+    }
+
+    </style>
+</head>
+ 
+<body>
+    <h1 style="text-align: center;">
+        REGISTRATION FORM
+    </h1>
+    <form name="RegForm"
+          onsubmit="return AKASH()">
+        <p>
+            Name:
+            <input type="text" size="65"
+                   name="Name"
+                   placeholder="Name"/>
+        </p>
+        <br />
+        <p>
+            Address:
+            <input type="text" size="65"
+                   name="Address"
+                   placeholder="Bangalore, Karnataka"/>
+        </p>
+        <br />
+        <p>
+            E-mail Address:
+            <input type="text" size="65"
+                   name="EMail"
+                   placeholder="demo@example.com"/>
+        </p>
+        <br />
+        <p>
+            Password:
+            <input type="password" size="65"
+                   name="Password" />
+        </p>
+        <br />
+        <p>
+            Telephone:
+            <input type="tel" size="65"
+                   name="Telephone"
+                   placeholder="9876543210"/>
+        </p>
+        <br />
+        <p>
+            Select Your Course: 
+            <select value="" name="Subject">
+                <option>Select Course</option>
+                <option>BTECH</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>B.COM</option>
+            </select>
+        </p>
+        <br />
+        <br />
+        <p>
+            Comments:
+            <textarea cols="55" name="Comment"> </textarea>
+        </p>
+        <p>
+            <input type="submit" value="Send"
+                   name="Submit" />
+            <input type="reset" value="Reset"
+                   name="Reset" />
+        </p>
+    </form>
+    <script>
+        function AKASH() {
+    const name =
+        document.forms.RegForm.Name.value;
+    const email =
+        document.forms.RegForm.EMail.value;
+    const phone =
+        document.forms.RegForm.Telephone.value;
+    const what =
+        document.forms.RegForm.Subject.value;
+    const password =
+        document.forms.RegForm.Password.value;
+    const address =
+        document.forms.RegForm.Address.value;
+ 
+    //Javascript Regex for Email Validation.
+    const regEmail = 
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+ 
+    // Javascript Regex for Phone Number validation.
+    const regPhone = /^\d{10}$/;
+ 
+    // Javascript Regex for Name validation
+    const regName = /\d+$/g;
+ 
+    if (name == "" || regName.test(name)) {
+        window.alert
+        ("Please enter your name properly.");
+        name.focus();
+        return false;
+    }
+ 
+    if (address == "") {
+        window.alert
+        ("Please enter your address.");
+        address.focus();
+        return false;
+    }
+ 
+    if (email == "" || !regEmail.test(email)) {
+        window.alert
+        ("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+ 
+    if (password == "") {
+        alert("Please enter your password");
+        password.focus();
+        return false;
+    }
+ 
+    if (password.length < 6) {
+        alert
+        ("Password should be atleast 6 character long");
+        password.focus();
+        return false;
+ 
+    }
+    if (phone == "" || !regPhone.test(phone)) {
+        alert("Please enter valid phone number.");
+        phone.focus();
+        return false;
+    }
+ 
+    if (what.selectedIndex == -1) {
+        alert("Please enter your course.");
+        what.focus();
+        return false;
+    }
+ 
+    return true;
+}
+    </script>
+</body>
+ 
+</html>
